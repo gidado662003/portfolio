@@ -12,7 +12,7 @@ export default function Home() {
   const pathname = usePathname();
 
   const [homeRef, homeInView] = useInView({ threshold: 0.6 });
-  const [aboutRef, aboutInView] = useInView({ threshold: 0.6 });
+  const [aboutRef, aboutInView] = useInView({ threshold: 0.2 });
   const [experienceRef, experienceInView] = useInView({ threshold: 0.1 });
 
   useEffect(() => {

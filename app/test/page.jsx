@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function App() {
   const [items, setItems] = useState([
@@ -10,7 +10,7 @@ export default function App() {
     { id: 5, name: "Five" },
     { id: 6, name: "Six" },
   ]);
-
+  const [screen, setScreen] = useState(null);
   const moveToMiddle = (id) => {
     const index = items.findIndex((item) => item.id === id);
     const itemToMove = items[index];
@@ -22,6 +22,26 @@ export default function App() {
 
     setItems(newItems);
   };
+  const [mouseMove, setMouse] = useState(null);
+  const [activeScreen, setActiveScreen] = useState(null);
+  const inactiveTimer = useRef(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setActiveScreen(true);
+      clearTimeout(inactiveTimer.current);
+      inactiveTimer.current = setTimeout(() => {
+        setActiveScreen(false);
+      }, 3000);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      clearTimeout(inactiveTimer.current);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+  console.log(activeScreen ? "active" : "inactive");
 
   return (
     <div className="flex gap-4">
