@@ -1,11 +1,14 @@
 "use client";
-import { Home, User, Book, HeartHandshake, MessageSquareText } from "lucide-react";
-import { motion } from "framer-motion";
-import {useEffect} from "react"
+import {
+  Home,
+  User,
+  Book,
+  HeartHandshake,
+  MessageSquareText,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Nav({ activeSection }) {
-  console.log(activeSection);
-  
   const navItems = [
     { icon: Home, hash: "home" },
     { icon: User, hash: "about" },
@@ -14,41 +17,65 @@ function Nav({ activeSection }) {
     { icon: MessageSquareText, hash: "contact" },
   ];
 
-  function handlePath(hash) {
+  const handlePath = (hash) => {
     const element = document.getElementById(hash);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
     window.history.replaceState(null, "", `/#${hash}`);
-  }
+  };
 
   return (
     <motion.div
-      className="fixed bottom-0 left-1/2 -translate-x-1/2 mb-8 z-50"
+      className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50"
       animate={{ y: [0, -4, 0] }}
       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
     >
-         {activeSection}
-      <div className="bg-[#1f1f1f]/50 backdrop-blur-md px-6 py-4 rounded-full flex justify-center items-center gap-x-6 shadow-lg border border-gray-700">
-        {navItems.map((item, index) => {
-          const Icon = item.icon;
-          const isActive = activeSection === item.hash;
+      <div className="relative">
+        <motion.div
+          className="absolute h-[2px] bg-white/20 top-1/2 left-0 right-0 -translate-y-1/2"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8 }}
+        />
 
-          return (
-            <button
-              key={index}
-              onClick={() => handlePath(item.hash)}
+        <motion.div
+          className="flex items-center justify-center gap-8 px-6 py-3 rounded-full bg-black/60 backdrop-blur-md border border-white/10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {navItems.map((item, index) => {
+            const Icon = item.icon;
+            const isActive = activeSection === item.hash;
 
-              className={`p-3 cursor-pointer rounded-full transition-all duration-200 ${
-                isActive
-                  ? "bg-blue-600 text-white"
-                  : "text-gray-400 hover:text-white hover:bg-[#444]"
-              }`}
-            >
-              <Icon className="w-5 h-5" />
-            </button>
-          );
-        })}
+            return (
+              <motion.div
+                key={index}
+                className="relative z-10 "
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <button
+                  onClick={() => handlePath(item.hash)}
+                  className={`cursor-pointer p-2 rounded-full transition-all duration-300 ${
+                    isActive
+                      ? "text-white"
+                      : "text-white/40 hover:text-white/80"
+                  }`}
+                >
+                  <Icon className="w-5 h-5" />
+                </button>
+
+                {isActive && (
+                  <motion.div
+                    className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rounded-full"
+                    layoutId="navIndicator"
+                    transition={{ type: "spring", bounce: 0.4 }}
+                  />
+                )}
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
     </motion.div>
   );
