@@ -1,15 +1,18 @@
-
 function HomePage() {
   return (
     <div className="flex flex-col items-center  w-full ">
       <div className="flex items-center justify-between w-full px-3 mt-[80px]">
-        <div>1</div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
         <div className="text-center">
           <p className="">Hello I'm</p>
           <p className="text-2xl font-bold">Gidado Abdullatef</p>
           <p className=" text-gray-300">Software Engineer</p>
         </div>
-        <div className="">2</div>
+        <div className="rotate-270">Scroll Down</div>
       </div>
       <div className="flex gap-4 items-center justify-center w-full px-3 mt-[40px]">
         <div>
@@ -21,7 +24,7 @@ function HomePage() {
           <button>Contact Me</button>
         </div>
       </div>
-        </div>
+    </div>
   );
 }
 
