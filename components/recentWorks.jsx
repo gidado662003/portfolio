@@ -38,7 +38,7 @@ function RecentWorks() {
       setCurrentIndex((prev) => prev + 1);
     }, 6000);
     return () => clearInterval(interval);
-  }, [recentWorks.length]);
+  }, []);
 
   useEffect(() => {
     setCurrentIndex(0);
@@ -54,14 +54,17 @@ function RecentWorks() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {recentWorks.map((work, index) => {
           const image =
-            work.screenshots[currentIndex % work.screenshots.length];
+            work.screenshots.length > 1
+              ? work.screenshots[currentIndex % work.screenshots.length]
+              : work.screenshots[0];
+
           return (
             <div
               key={index}
               className="p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col gap-y-4 text-sm"
             >
               <div className="w-full h-[180px] relative overflow-hidden rounded-lg">
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="wait" initial={false}>
                   <motion.img
                     key={image}
                     src={image}
