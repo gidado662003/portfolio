@@ -65,16 +65,21 @@ function RecentWorks() {
             >
               <div className="w-full h-[180px] relative overflow-hidden rounded-lg">
                 <AnimatePresence mode="wait" initial={false}>
-                  <motion.img
+                  <motion.div
                     key={image}
-                    src={image}
                     alt={`${work.title} screenshot`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0 w-full h-full object-cover rounded-lg"
-                  />
+                  >
+                    <img
+                      src={image}
+                      alt={`${work.title} screenshot`}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </motion.div>
                 </AnimatePresence>
               </div>
               <h3 className="text-lg font-semibold text-[#36b94c]">
