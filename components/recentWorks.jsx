@@ -10,24 +10,24 @@ function RecentWorks() {
       title: "E-commerce",
       description: "An e-commerce website built with Next.js and Tailwind CSS.",
       screenshots: [
-        "/E-commerce/screenshot (1).png",
-        "/E-commerce/screenshot (2).png",
-        "/E-commerce/screenshot (3).png",
+        "./images/E-commerce/screenshot (1).png",
+        "./images/E-commerce/screenshot (2).png",
+        "./images/E-commerce/screenshot (3).png",
       ],
     },
     {
       title: "Doctor Appointment App",
       description: "A doctor appointment booking app built with modern tools.",
       screenshots: [
-        "/Doctor Appointment App/screenshot (1).png",
-        "/Doctor Appointment App/screenshot (2).png",
-        "/Doctor Appointment App/screenshot (3).png",
+        "./images/Doctor Appointment App/screenshot (1).png",
+        "./images/Doctor Appointment App/screenshot (2).png",
+        "./images/Doctor Appointment App/screenshot (3).png",
       ],
     },
     {
       title: "Recipe",
       description: "A recipe website built with Next.js and Tailwind CSS.",
-      screenshots: ["/Recipe/screenshot (1).png"],
+      screenshots: ["./images/Recipe/screenshot (1).png"],
     },
   ];
 
@@ -67,13 +67,7 @@ function RecentWorks() {
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.img
                     key={image}
-                    src={
-                      work.screenshots.length > 1
-                        ? work.screenshots[
-                            currentIndex % work.screenshots.length
-                          ]
-                        : work.screenshots[0]
-                    }
+                    src={image}
                     alt={`${work.title} screenshot`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
