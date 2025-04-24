@@ -68,7 +68,7 @@ function RecentWorks() {
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.img
                     key={image}
-                    src="/images/E-commerce/screenshot1.png"
+                    src={image}
                     alt={`${work.title} screenshot`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
