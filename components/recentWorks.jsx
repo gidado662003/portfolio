@@ -5,29 +5,30 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function RecentWorks() {
   const pathname = usePathname();
+
   const recentWorks = [
     {
       title: "E-commerce",
       description: "An e-commerce website built with Next.js and Tailwind CSS.",
       screenshots: [
-        "./images/E-commerce/screenshot (1).png",
-        "./images/E-commerce/screenshot (2).png",
-        "./images/E-commerce/screenshot (3).png",
+        "/images/E-commerce/screenshot (1).png",
+        "/images/E-commerce/screenshot (2).png",
+        "/images/E-commerce/screenshot (3).png",
       ],
     },
     {
       title: "Doctor Appointment App",
       description: "A doctor appointment booking app built with modern tools.",
       screenshots: [
-        "./images/Doctor Appointment App/screenshot (1).png",
-        "./images/Doctor Appointment App/screenshot (2).png",
-        "./images/Doctor Appointment App/screenshot (3).png",
+        "/images/Doctor Appointment App/screenshot (1).png",
+        "/images/Doctor Appointment App/screenshot (2).png",
+        "/images/Doctor Appointment App/screenshot (3).png",
       ],
     },
     {
       title: "Recipe",
       description: "A recipe website built with Next.js and Tailwind CSS.",
-      screenshots: ["./images/Recipe/screenshot (1).png"],
+      screenshots: ["/images/Recipe/screenshot (1).png"],
     },
   ];
 
@@ -65,21 +66,16 @@ function RecentWorks() {
             >
               <div className="w-full h-[180px] relative overflow-hidden rounded-lg">
                 <AnimatePresence mode="wait" initial={false}>
-                  <motion.div
+                  <motion.img
                     key={image}
+                    src="/images/Recipe/screenshot (1).png"
                     alt={`${work.title} screenshot`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0 w-full h-full object-cover rounded-lg"
-                  >
-                    <img
-                      src={image}
-                      alt={`${work.title} screenshot`}
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  </motion.div>
+                  />
                 </AnimatePresence>
               </div>
               <h3 className="text-lg font-semibold text-[#36b94c]">
