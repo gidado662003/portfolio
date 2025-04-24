@@ -11,24 +11,24 @@ function RecentWorks() {
       title: "E-commerce",
       description: "An e-commerce website built with Next.js and Tailwind CSS.",
       screenshots: [
-        "/public/images/E-commerce/screenshot (1).png",
-        "/public/images/E-commerce/screenshot (2).png",
-        "/public/images/E-commerce/screenshot (3).png",
+        "/images/E-commerce/screenshot1.png",
+        "/images/E-commerce/screenshot2.png",
+        "/images/E-commerce/screenshot3.png",
       ],
     },
     {
       title: "Doctor Appointment App",
       description: "A doctor appointment booking app built with modern tools.",
       screenshots: [
-        "/public/images/Doctor Appointment App/screenshot (1).png",
-        "/public/images/Doctor Appointment App/screenshot (2).png",
-        "/public/images/Doctor Appointment App/screenshot (3).png",
+        "/images/Doctor Appointment App/screenshot1.png",
+        "/images/Doctor Appointment App/screenshot2.png",
+        "/images/Doctor Appointment App/screenshot3.png",
       ],
     },
     {
       title: "Recipe",
       description: "A recipe website built with Next.js and Tailwind CSS.",
-      screenshots: ["/public/images/Recipe/screenshot (1).png"],
+      screenshots: ["/images/Recipe/screenshot1.png"],
     },
   ];
 
