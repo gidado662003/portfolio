@@ -11,24 +11,24 @@ function RecentWorks() {
       title: "E-commerce",
       description: "An e-commerce website built with Next.js and Tailwind CSS.",
       screenshots: [
-        "/images/E-commerce/screenshot1.png",
-        "/images/E-commerce/screenshot2.png",
-        "/images/E-commerce/screenshot3.png",
+        "/images/E-commerce/Screenshot1.png",
+        "/images/E-commerce/Screenshot2.png",
+        "/images/E-commerce/Screenshot3.png",
       ],
     },
     {
       title: "Doctor Appointment App",
       description: "A doctor appointment booking app built with modern tools.",
       screenshots: [
-        "/images/Doctor-Appointment-App/screenshot1.png",
-        "/images/Doctor-Appointment-App/screenshot2.png",
-        "/images/Doctor-Appointment-App/screenshot3.png",
+        "/images/Doctor-Appointment-App/Screenshot1.png",
+        "/images/Doctor-Appointment-App/Screenshot2.png",
+        "/images/Doctor-Appointment-App/Screenshot3.png",
       ],
     },
     {
       title: "Recipe",
       description: "A recipe website built with Next.js and Tailwind CSS.",
-      screenshots: ["/images/Recipe/screenshot1.png"],
+      screenshots: ["/images/Recipe/Screenshot1.png"],
     },
   ];
 
@@ -86,7 +86,6 @@ function RecentWorks() {
           );
         })}
       </div>
-      <img src="/sys-logo.jpg" alt="testt" />
     </section>
   );
 }
