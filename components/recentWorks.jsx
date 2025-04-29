@@ -20,9 +20,9 @@ function RecentWorks() {
       title: "Doctor Appointment App",
       description: "A doctor appointment booking app built with modern tools.",
       screenshots: [
-        "/images/Doctor Appointment App/screenshot1.png",
-        "/images/Doctor Appointment App/screenshot2.png",
-        "/images/Doctor Appointment App/screenshot3.png",
+        "/images/Doctor-Appointment-App/screenshot1.png",
+        "/images/Doctor-Appointment-App/screenshot2.png",
+        "/images/Doctor-Appointment-App/screenshot3.png",
       ],
     },
     {
