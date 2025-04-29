@@ -86,7 +86,7 @@ function RecentWorks() {
           );
         })}
       </div>
-      <img src="/images/Recipe/screenshot1.png" alt="testt" />
+      <img src="/sys-logo.jpg" alt="testt" />
     </section>
   );
 }
