@@ -115,7 +115,7 @@ function RecentWorks() {
           return (
             <motion.div
               key={index}
-              className="p-6 bg-gradient-to-b from-[#252525] to-[#1a1a1a] border border-gray-800  rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col gap-y-4  border border-gray-100 h-full"
+              className=" bg-gradient-to-b from-[#252525] to-[#1a1a1a] border border-gray-800  rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col gap-y-4  border border-gray-100 h-full"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -123,7 +123,7 @@ function RecentWorks() {
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              <div className="relative w-full h-[220px] rounded-xl overflow-hidden group">
+              <div className="relative w-full h-[220px] rounded-t-xl overflow-hidden group">
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.img
                     key={`${work.title}-${currentIndices[index]}`}
@@ -199,8 +199,8 @@ function RecentWorks() {
                         }}
                         className={`w-2 h-2 rounded-full transition-all ${
                           currentIndices[index] === i
-                            ? "bg-white w-4"
-                            : "bg-white/50"
+                            ? "bg-blue-400 w-4"
+                            : "bg-black/50"
                         }`}
                         aria-label={`Go to screenshot ${i + 1}`}
                       />
@@ -209,8 +209,8 @@ function RecentWorks() {
                 )}
               </div>
 
-              <div className="flex-grow flex flex-col">
-                <h3 className="text-xl font-bold text-blue-800 mb-2">
+              <div className="flex-grow gap-y-3 p-6 flex flex-col">
+                <h3 className="text-xl font-bold text-blue-300 mb-2">
                   {work.title}
                 </h3>
                 <p className="text-graw`-600 mb-4 flex-grow">
@@ -221,7 +221,7 @@ function RecentWorks() {
                   {work.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                      className="px-4 py-3 bg-gradient-to-b from-[#252530] to-[#1a1a1c] border border-gray-800 text-white text-xs rounded-[20px]"
                     >
                       {tag}
                     </span>
@@ -230,7 +230,7 @@ function RecentWorks() {
 
                 <motion.a
                   href={work.link}
-                  className="mt-auto inline-block px-6 py-2 bg-[#36b94c] text-white rounded-lg font-medium text-center hover:bg-[#2ea041] transition-colors duration-300"
+                  className="mt-auto inline-block px-6 py-2 bg-blue-400 text-white rounded-lg font-medium text-center hover:bg-blue-600 transition-colors duration-300"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
                 >

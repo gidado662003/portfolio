@@ -6,6 +6,7 @@ import HomePage from "@/components/home";
 import GetToKnow from "@/components/getToKnow";
 import Experience from "@/components/experience";
 import RecentWorks from "@/components/recentWorks";
+import Services from "@/components/services";
 import Nav from "@/components/nav";
 
 export default function Home() {
@@ -47,6 +48,7 @@ export default function Home() {
       </section>
       <section id="services" ref={recentWorksRef}>
         <RecentWorks />
+        <Services />
       </section>
       <Nav activeSection={activeSection} />
     </>
